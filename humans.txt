@@ -1,15 +1,23 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
-# TEAM
-
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
-
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    Github, jQuery, Modernizr, Normalize.css, W3.css, HTML5 Boilerplate
+
+    /* TEAM */
+	Website Developer:Happy Krusher
+	Twitter: @HappyKrusher
+
+/* THANKS */
+
+	Game Developer: ToyLogic Inc
+	Twitter: @HappyDungeons
+	From: Japan
+
+/* SITE */
+	Last update:2017/12/05
+	Language: English
+	Doctype:HTML5
+	IDE: Notepad++

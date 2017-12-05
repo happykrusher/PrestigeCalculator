@@ -1,104 +1,180 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-		<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <div id="mainDiv">
-		
-		<!-- Main Div -->
-		
-		 <h1>Happy Dungeons Prestige Calculator</h1>
-		 
-		 <p>Enter XP Earned and time per round to calculate amount of rounds and time to prestige.</p>
-		
-		  <div id="inputDiv">
-		  <!-- Form Div -->
-		   
-		   <form id="xpDataForm">
-		   
-		    <label for="xp">Experience Earned:</label>
-		    <input type="number" name="xp" id="xpInput" placeholder="XP Per Round" />
-			
-			<label for="time">Minutes per Round: </label>
-			<input type="number" name="time" id="timeInput" placeholder="Minutes Per Round" />
-			 
-			<input type="submit" value="Calculate" />
-			
-		   </form>
-		  
-		  </div>
-		  
-		  <div id="resultDiv">
-			
-			<p id="runResult"></p>
-			
-			<p id="timeResult"></p>
-			
-		  </div>
-		  
-		  <div id="xpDataDiv">
-		  
-		   <p id="totalXP"></p>
-		   
-		   <table id="xpDataTable">
-		    <tbody>
-				<th id="level" >Level</th>
-				<th id="xp" >Experience</th>
-				<th id="remaining">Remaining</th>
-				<th id="runs" >Runs</th>
-			</tbody>
-			
-		   </table>
-		   
-		  </div>
-		  
-		</div>
-		
-		<!-- Scripts -->
-		
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-		
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Prestige Calculator</title>
+  <meta name="description" content="Prestige Calculator tool for Happy Dungeons on Xbox one and PS4">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="origin">
+  <link rel="canonical" href="https://happykrusher.github.io/PrestigeCalculator/">
+  <link rel="shortcut icon" type="image/x-icon" href="https://happykrusher.github.io/PrestigeCalculator/favicon.ico">
+  <link rel="icon" type="image/ico" href="https://happykrusher.github.io/PrestigeCalculator/icon.png">
   
-		
-	<script type="text/javascript">
-	
-	//Test JS Here
+  
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="https://happykrusher.github.io/PrestigeCalculator/icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-anchor,.fa-coffee {font-size:200px}
+  </style>
+  
+</head>
+<body>
 
-	
-        </script>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-flat-peter-river w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-flat-emerald w3-large w3-flat-peter-river" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#header" class="w3-bar-item w3-button w3-padding-large w3-hover-flat-emerald w3-border-right w3-border-flat-peter-river">Tools for Happy Dungeons</a>
+    <a href="#div-calculator" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white w3-hover-flat-emerald">Prestige Calculator</a>
+  </div>
 
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#div-calculator" class="w3-bar-item w3-button w3-padding-large w3-border-bottom w3-border-flat-peter-river w3-white w3-hover-flat-emerald">Prestige Calculator</a>
+  </div>
+</div>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-110572283-1','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-    </body>
+<!-- Header -->
+<header id="header" class="w3-container w3-flat-peter-river w3-center w3-padding-64">
+  <h1 class="w3-margin-top w3-jumbo">Prestige Calculator</h1>
+  <h3 class="move-up">for Happy Dungeons</h3>
+</header>
+
+<!-- First Grid -->
+<div id="div-calculator" class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content w3-center">
+  
+    <div class="w3-row">
+      <h5>Enter XP Earned and Time per Round to calculate amount of rounds and time to prestige.</h5>
+    </div>
+  
+    <div id="div-inputs" class="w3-row-padding w3-margin-top w3-margin-bottom">
+    
+      <div class="w3-half">
+        <label>XP</label>
+        <input id="input-xp" type="number" class="w3-input w3-center w3-border" placeholder="XP per Round">
+      </div>
+    
+      <div class="w3-half">
+        <label>Minutes</label>
+        <input id="input-time" type="number" class="w3-input w3-center w3-border" placeholder="Minutes per Round">
+      </div>
+      
+    </div>
+    
+    <div class="w3-row">
+      <button id="btn-calculate" type="submit" class="w3-btn w3-flat-emerald w3-padding-large w3-large w3-margin-top"><strong>Calculate</strong></button>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div id="div-results" class="w3-row-padding w3-light-grey w3-padding-32 w3-container hidden">
+  <div class="w3-content w3-center">
+  
+    <h2>Results</h2>
+  
+    <div id="card-results" class="w3-row w3-margin-top w3-margin-bottom">
+      <div class="w3-half">
+        <div class="w3-card-4 w3-white w3-margin">
+          <header class="w3-container w3-flat-peter-river">
+            <h3>Rounds to Prestige</h3>
+          </header>
+          
+          <div class="w3-container">
+            <p id="p-rounds">Enter XP to see results</p>
+          </div>
+          
+          <footer class="w3-container w3-flat-peter-river">
+          </footer>
+        </div>
+      </div>
+      
+      <div class="w3-half">
+        <div class="w3-card-4 w3-white w3-margin">
+          <header class="w3-container w3-flat-peter-river">
+            <h3>Time to Prestige</h3>
+          </header>
+          
+          <div class="w3-container">
+            <p id="p-time">Enter Minutes to see results</p>
+          </div>
+          
+          <footer class="w3-container w3-flat-peter-river">
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Third Grid -->
+<div id="div-xp-data" class="w3-row-padding w3-container w3-black w3-opacity w3-padding-64">
+  <div class="w3-content w3-center">
+  
+    <h2>XP Table</h2>
+    
+    <h3 id="h-total-xp"></h3>
+  
+    <div class="w3-row w3-margin-top w3-margin-bottom">
+      <div class="rest w3-white">
+        <table id="table-xp-data" class="w3-table w3-striped w3-border w3-centered">
+          <tr>
+            <th>Level</th>
+            <th>XP</th>
+            <th>Remaining XP</th>
+            <th class="hidden">Rounds</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-center w3-opacity">
+  <p>Website created by <a href="https://account.xbox.com/en-CA/Profile?gamerTag=Happy%20Krusher" target="_blank">Happy Krusher</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+<!-- Scripts -->
+
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+ga('create','UA-110572283-1','auto');ga('send','pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+</body>
 </html>

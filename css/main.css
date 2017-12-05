@@ -97,53 +97,31 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-#mainDiv {
-	text-align: center;
+.move-up {
+  margin: -10px 106px;
 }
 
-#inputDiv form {
-	display:table;
-	margin:auto;
-	text-align: center;
+#div-inputs {
+  font-size: 20px;
+  width: 80%;
+  margin: auto;
 }
 
-#inputDiv form input{
-    display: block;
-    margin:2px 0 20px 10px;
-	width: 100%;
+#div-inputs input {
+  font-size: 28px;
 }
 
-#xpDataDiv {
-	width: 100%;
-	height: auto;
-	margin-bottom: 20px;
+#btn-calculate {
+  width: 50%;
 }
 
-#xpDataDiv table {
-	margin: 0 auto;
+#card-results p {
+  font-size: 32px;
 }
 
-#xpDataTable td, th {
-	border: 1px solid #000;
+#card-results footer {
+  height: 4px;
 }
-
-#runs {
-	display: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes
