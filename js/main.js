@@ -150,6 +150,6 @@ function populateXpData(json) {
 		}
 		
 		//List total Xp from lv.1 - lv.50
-		$('#h-total-xp').text(maxXp.toString() + " XP from lv.1 - lv.50");
+		$('#h-total-xp').text(maxXp.toString());
 		
 }

@@ -123,6 +123,23 @@ textarea {
   height: 4px;
 }
 
+/*For Smaller Screens*/
+@media only screen and (max-width: 800px) {
+    .move-up {
+      font-size: 16px;
+    }
+    #div-inputs {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    #div-inputs input{
+      font-size: 16px;
+    }
+}
+
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
