@@ -101,39 +101,9 @@ textarea {
   margin: -10px 106px;
 }
 
-#div-inputs {
-  font-size: 20px;
-  width: 80%;
-  margin: auto;
-}
-
-#div-inputs input {
-  font-size: 28px;
-}
-
-#btn-calculate {
-  width: 50%;
-}
-
-#card-results p {
-  font-size: 32px;
-}
-
-#card-results footer {
-  height: 4px;
-}
-
 /*For Smaller Screens*/
 @media only screen and (max-width: 800px) {
     .move-up {
-      font-size: 16px;
-    }
-    #div-inputs {
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
-    
-    #div-inputs input{
       font-size: 16px;
     }
 }
