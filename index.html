@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Minion Tracker</title>
-  <meta name="description" content="Minion Tracker tool for Happy Dungeons on Xbox one and PS4">
+  <title>Prestige Calculator</title>
+  <meta name="description" content="Prestige Calculator tool for Happy Dungeons on Xbox one and PS4">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="origin">
   <link rel="canonical" href="https://happykrusher.github.io/PrestigeCalculator/">
@@ -39,46 +39,112 @@
   <div class="w3-bar w3-flat-peter-river w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-flat-emerald w3-large w3-flat-peter-river" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#header" class="w3-bar-item w3-button w3-padding-large w3-hover-flat-emerald w3-border-right w3-border-flat-peter-river">Tools for Happy Dungeons</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white w3-hover-flat-emerald">Minion Tracker</a>
+    <a href="#div-calculator" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white w3-hover-flat-emerald">Prestige Calculator</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-border-bottom w3-border-flat-peter-river w3-white w3-hover-flat-emerald">Minion Tracker</a>
+    <a href="#div-calculator" class="w3-bar-item w3-button w3-padding-large w3-border-bottom w3-border-flat-peter-river w3-white w3-hover-flat-emerald">Prestige Calculator</a>
   </div>
 </div>
 
 <!-- Header -->
 <header id="header" class="w3-container w3-flat-peter-river w3-center w3-padding-64">
-  <h1 class="w3-margin-top w3-jumbo">Minion Tracker</h1>
+  <h1 class="w3-margin-top w3-jumbo">Prestige Calculator</h1>
   <h3 class="move-up">for <br> Happy Dungeons</h3>
 </header>
 
 <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div id="div-calculator" class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content w3-center">
+  
+    <div class="w3-row">
+      <h5>Enter XP Earned and Time per Round to calculate amount of rounds and time to prestige.</h5>
+    </div>
+  
+    <div id="div-inputs" class="w3-row-padding w3-margin-top w3-margin-bottom">
     
-    <!-- Coming Soon -->
-    <h2>Minion Tracker</h2>
-    <p>A easy to use tool for keeping track of minion parties in Happy Dungeons</p>
-    <p>Coming Soon</p>
+      <div class="w3-half">
+        <label>XP</label>
+        <input id="input-xp" type="number" class="w3-input w3-center w3-border" placeholder="XP per Round">
+      </div>
+    
+      <div class="w3-half">
+        <label>Minutes</label>
+        <input id="input-time" type="number" class="w3-input w3-center w3-border" placeholder="Minutes per Round">
+      </div>
       
+    </div>
+    
+    <div class="w3-row">
+      <button id="btn-calculate" type="submit" class="w3-btn w3-flat-emerald w3-padding-large w3-large w3-margin-top"><strong>Calculate</strong></button>
+    </div>
+    
   </div>
 </div>
 
 <!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
+<div id="div-results" class="w3-row-padding w3-light-grey w3-padding-32 w3-container hidden">
   <div class="w3-content w3-center">
   
+    <h2>Results</h2>
   
-  
+    <div id="card-results" class="w3-row w3-margin-top w3-margin-bottom">
+      <div class="w3-half">
+        <div class="w3-card-4 w3-white w3-margin">
+          <header class="w3-container w3-flat-peter-river">
+            <h3>Rounds to Prestige</h3>
+          </header>
+          
+          <div class="w3-container">
+            <p id="p-rounds">Enter XP to see results</p>
+          </div>
+          
+          <footer class="w3-container w3-flat-peter-river">
+          </footer>
+        </div>
+      </div>
+      
+      <div class="w3-half">
+        <div class="w3-card-4 w3-white w3-margin">
+          <header class="w3-container w3-flat-peter-river">
+            <h3>Time to Prestige</h3>
+          </header>
+          
+          <div class="w3-container">
+            <p id="p-time">Enter Minutes to see results</p>
+          </div>
+          
+          <footer class="w3-container w3-flat-peter-river">
+          </footer>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- Third Grid -->
-<div class="w3-row-padding w3-container w3-black w3-opacity w3-padding-32">
+<div id="div-xp-data" class="w3-row-padding w3-container w3-black w3-opacity w3-padding-32">
   <div class="w3-content w3-center">
+  
+    <h2>XP Chart</h2>
     
+    <h3 id="">XP from lv.1 - lv.50</h3>
+    
+    <h3 id="h-total-xp"></h3>
+  
+    <div class="w3-row w3-margin-top w3-margin-bottom">
+      <div class="rest w3-white w3-responsive">
+        <table id="table-xp-data" class="w3-table w3-striped w3-border w3-centered">
+          <tr>
+            <th>Level</th>
+            <th>XP</th>
+            <th>Remaining XP</th>
+            <th class="hidden">Rounds</th>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 
